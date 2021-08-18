@@ -1,14 +1,9 @@
 // Wrapper
 
 .wrapper {
-    max-width: em(1000);
-    background-color: rgba(grey, 0.2);
+    max-width: em(1300);
 
     @include mq($desktopWide){
         margin: em(8) auto;
-        border: 3px solid $textColor;
-        box-shadow: 2px 3px 10px rgba(#4b4b4b, 0.5);
-        border-radius: 10px;
-
     }
 }

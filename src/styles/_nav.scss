@@ -22,17 +22,17 @@ nav {
         &:hover,
         &:active,
         &:focus {
-            background-color: rgba(white, 0.3);
+            // background-color: rgba(white, 0.05);
         }
         &.active {
-            background-color: rgba(black, 0.2);
+            color: red;
         }
     }
 }
 
 .nav-main {
     li {
-        background-color: $featureColor;
+        // background-color: $featureColor;
     }
     @include mq($tablet){
         a {
@@ -43,6 +43,6 @@ nav {
 
 .nav-sort {
     li {
-        background-color: $highlightColor;
+        // background-color: $highlightColor;
     }
 }

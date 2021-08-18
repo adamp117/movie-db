@@ -1,0 +1,18 @@
+// Movies
+
+.movies-container {
+    padding: em(12);
+
+    @include mq($tablet){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: em(14);
+    }
+
+    @include mq($desktop){
+        padding: em(20);
+        grid-template-columns: repeat(3, 1fr);
+        gap: em(18);
+    }
+
+}

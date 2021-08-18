@@ -1,0 +1,48 @@
+// Nav
+
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+    }
+    li {
+        flex: 1;
+        margin-right: em(4);
+        &:last-child {
+            margin-right: 0;
+        }
+    } 
+    a {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        line-height: em(40);
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: rgba(white, 0.3);
+        }
+        &.active {
+            background-color: rgba(black, 0.2);
+        }
+    }
+}
+
+.nav-main {
+    li {
+        background-color: $featureColor;
+    }
+    @include mq($tablet){
+        a {
+            padding: 0 em(20);
+        }
+    }
+}
+
+.nav-sort {
+    li {
+        background-color: $highlightColor;
+    }
+}

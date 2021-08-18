@@ -1,0 +1,19 @@
+// Movie Card
+
+.movie-card {
+    padding: em(10);
+    margin-bottom: em(16);
+    background-color: rgba(black, 0.3);
+    border: em(3) solid $textColor;
+    border-radius: em(8);
+
+    img {
+        width: 100%;
+        border-radius: em(4);
+    }
+
+    @include mq($tablet){
+        margin-bottom: 0;
+    }
+
+}

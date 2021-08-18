@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import NavSort from '../components/NavSort';
 import Movies from '../components/Movies';
-import { API_TOKEN} from '../globals/globals';
+import { API_TOKEN } from '../globals/globals';
 
 function PageHome({ sort }) {
 

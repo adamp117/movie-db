@@ -11,8 +11,8 @@ function MovieCard({ movieObj }) {
                 }
             </div>
             <div className="movie">
-                <h3>{movieObj.title}</h3>
-                <Link to={`/movie/${movieObj.id}`}>More Info</Link>
+                {/* <h3>{movieObj.title}</h3>
+                <Link to={`/movie/${movieObj.id}`}>More Info</Link> */}
             </div>
         </div>
     )

@@ -1,47 +1,54 @@
-// Search Bar - shows the search bar below the header
 
-import React, { Component } from 'react';
+import { API_KEY } from '../globals/globals.js'
+import MovieCard from './MovieCard.js';
+import { useState } from 'react';
 
-class SearchBar extends Component {
-    state = {
-        value: ''
+function Search() {
+    const [query, setQuery] = useState("");
+    const [result, setResults] = useState([]);
+    const onChange = (e) => {
+        e.preventDefault();
+        setQuery(e.target.value);
+        fetch(
+            `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${e.target.value}&page=1&include_adult=false`
+        )
+            .then((res) => {
+                return res.json()
+            }).then((data) => {
+                if (!data.errors) {
+                    setResults(data.results);
+                }
+                else {
+                    setResults([]);
+                }
+            });
     }
-
-    timeout = null;
-
-    // Do search method with arrow function
-    doSearch = (event) => {
-        // Sets the value from the input key 
-        this.setState({ value: event.target.value })
-        // Waits for user to type something
-        clearTimeout(this.timeout);
-        // Clear old timeout to set a new one
-        this.timeout = setTimeout(() => {
-            // Getting callback function from props, 
-            this.props.callback(this.state.value);
-        }, 500)
-    }
-
-    render() {
-        return (
-            <div className="searchbar">
-                <div className="searchbar-content">
-                    {/* <img src="./images/search_icon.png" alt="Search Icon"></img> */}
-                    <input
-                        type="text"
-                        className="searchbar-input"
-                        placeholder="Search"
-                        // Call back function 
-                        onChange={this.doSearch}
-                        // Grab value from state to place into input field
-                        value={this.state.value}
-                    />
+    return (
+        <div className="add-page">
+            <div className="container">
+                <div className="add-content">
+                    <div className="input-wrapper">
+                        <input type='text'
+                            placeholder="Search for a movie"
+                            value={query}
+                            onChange={(event) => onChange(event)}
+                        />
+                    </div>
+                    {result.length > 0 && (
+                        <ul className="results">
+                            {result.map((movieObj) => (
+                                <li key={movieObj.id}>
+                                    <MovieCard movieObj={movieObj} />
+                                </li>
+                            ))}
+                        </ul>
+                    )}
                 </div>
             </div>
-        )
-    }
-
+        </div>
+    )
 }
 
+export default Search
 
-export default SearchBar;
+

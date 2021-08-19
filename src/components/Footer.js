@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <footer>
-            <p>&copy; 2021 FWD28 Class</p>
+            <p>&copy; 2021 quick flicks inc</p>
         </footer>
     )
 }

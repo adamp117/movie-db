@@ -24,12 +24,12 @@ function Search() {
             });
     }
     return (
-        <div className="add-page">
-            <div className="container">
+        <div className="search-feature">
+            <div className="search-container">
                 <div className="add-content">
                     <div className="input-wrapper">
                         <input type='text'
-                            placeholder="Search for a movie"
+                            placeholder="Search"
                             value={query}
                             onChange={(event) => onChange(event)}
                         />

@@ -10,10 +10,10 @@ function MovieCard({ movieObj }) {
                     <img src={`https://image.tmdb.org/t/p/w500/${movieObj.poster_path}`} alt={movieObj.title} />
                 }
             </div>
-            <div className="movie">
+            {/* <div className="movie">
                 <h3>{movieObj.title}</h3>
                 <Link to={`/movie/${movieObj.id}`}>More Info</Link>
-            </div>
+            </div> */}
         </div>
     )
 }

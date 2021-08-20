@@ -22,12 +22,12 @@ nav {
         text-align: center;
         line-height: em(40);
         text-transform: uppercase;
-        // &:hover,
-        // &:active,
-        // &:focus {
+        &:hover,
+        &:active,
+        &:focus {
         //     // background-color: rgba(white, 0.05);
         
-        // }
+        }
         &.active {
             color: red;
         }
@@ -45,8 +45,8 @@ nav {
     }
 }
 
-// .nav-sort {
+.nav-sort {
 //     // li {
 //     //     // background-color: $highlightColor;
 //     // }
-// }
+}

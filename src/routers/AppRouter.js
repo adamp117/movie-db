@@ -4,7 +4,6 @@ import Footer from '../components/Footer';
 import PageHome from '../pages/PageHome';
 import PageAbout from '../pages/PageAbout';
 import PageFavs from '../pages/PageFavs';
-import Search from '../components/Search';
 import PageSingleMovie from '../pages/PageSingleMovie';
 
 function AppRouter() {
@@ -12,7 +11,6 @@ function AppRouter() {
     <Router>
       <div className="wrapper">
         <Header />
-        <Search />
         <main>
           <Switch>
             <Route path="/" exact><PageHome sort='popular' /></Route>

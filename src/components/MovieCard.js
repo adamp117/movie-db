@@ -5,16 +5,20 @@ function MovieCard({ movieObj }) {
     return (
         <div className="movie-card">
             <div className="movie-poster">
-                {movieObj.poster_path === null ? 
-                    <img src={noPoster} alt="No poster" /> : 
+                {movieObj.poster_path === null ?
+                    <img src={noPoster} alt="No poster" /> :
                     <img src={`https://image.tmdb.org/t/p/w500/${movieObj.poster_path}`} alt={movieObj.title} />
                 }
             </div>
             <div className="movie">
+
                 {/* <div className="info-slider">
                     <h3>{movieObj.title}</h3>
                     <Link to={`/movie/${movieObj.id}`}>More Info</Link>
                 </div> */}
+
+            
+
             </div>
         </div>
     )

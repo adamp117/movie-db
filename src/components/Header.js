@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import NavMain from './NavMain';
-import logo from '../images/quick-flicks_logo.png';
+import logo from '../images/quick-flicks_logo_2.png';
 
 function Header() {
     return (

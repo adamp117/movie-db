@@ -22,12 +22,12 @@ nav {
         text-align: center;
         line-height: em(40);
         text-transform: uppercase;
-        &:hover,
-        &:active,
-        &:focus {
-            // background-color: rgba(white, 0.05);
+        // &:hover,
+        // &:active,
+        // &:focus {
+        //     // background-color: rgba(white, 0.05);
         
-        }
+        // }
         &.active {
             color: red;
         }
@@ -35,9 +35,9 @@ nav {
 }
 
 .nav-main {
-    li {
-        // background-color: $featureColor;
-    }
+    // li {
+    //     // background-color: $featureColor;
+    // }
     @include mq($tablet){
         a {
             padding: 0 em(20);
@@ -45,8 +45,8 @@ nav {
     }
 }
 
-.nav-sort {
-    li {
-        // background-color: $highlightColor;
-    }
-}
+// .nav-sort {
+//     // li {
+//     //     // background-color: $highlightColor;
+//     // }
+// }

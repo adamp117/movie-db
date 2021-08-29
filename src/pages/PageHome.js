@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
 import NavSort from '../components/NavSort';
 import Movies from '../components/Movies';
-import { API_TOKEN } from '../globals/globals';
+import { API_TOKEN } from '../globals/globalVariables';
 import Search from '../components/Search';
+import useGlobal from '../store/globalAppState';
+import isFav from '../utilities/isFav';
 
 function PageHome({ sort }) {
+    const globalStateAndglobalActions = useGlobal();
+    const globalState = globalStateAndglobalActions[0];
 
     const [movieData, setMovieData] = useState(null);
 

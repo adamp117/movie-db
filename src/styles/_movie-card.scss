@@ -1,15 +1,90 @@
 // Movie Card
+.movie-card {
+    position: relative;
+    
+    .movie-poster {
+        position: relative;
+       
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            // border-radius: 10px; rounded??? 
+        }
 
-.movie-poster {
+        @include mq($tablet){
+            margin-bottom: 0;
+            // padding: em(10);
+        }
+      
 
-    img {
+        // h3 {
+        //     @include center-text;
+        //     font-size: 1.4rem;
+        // }
+    }
+
+    .movie-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(254, 254, 254, 0.8);
+        overflow: hidden;
         width: 100%;
-        // border-radius: 10px; rounded??? 
+        height: 100%;
+        transform: scale(0);
+        transition: .3s ease;
+        // position: absolute;
+        // bottom: 0;
+        // left: 0;
+        // right: 0;
+        // /*Using RGBA*/
+        // background-color: rgba(179, 179, 179, 0.8);
+        // overflow: hidden;
+        // width: 100%;
+        // height: 0%;
+        // transition: .2s ease;
+       
+        .movie-info{
+            h3 {
+                color: $altTextColor;
+                padding: .2rem $tiny-space; 
+                font-size: .9rem;
+            }
+            p{
+            color: $altTextColor;
+            font-size: $tiny-space;
+            line-height: .6rem;
+            padding: .2rem $tiny-space;
+           }
+           .more-info{
+            color: $altTextColor;
+            font-size: $tiny-space;
+            text-transform: uppercase;
+            padding: .2rem $tiny-space; 
+            text-decoration: none;
+            line-height: .5rem;
+            // background-color: $buttonColor;
+            // border: none;
+            // text-align: center;
+            // text-decoration: none;
+            // display: inline-block;
+            // position: absolute;
+            // top: 50%;
+            // -ms-transform: translateY(-50%);
+            // transform: translateY(-50%);
+            
+            }    
+        }
     }
-
-    @include mq($tablet){
-        margin-bottom: 0;
-        // padding: em(10);
+      
+    &:hover{
+        .movie-overlay {
+            transform: scale(1);
+            // opacity: 1;
+            // transition: .2s ease;
+        
+        } 
     }
-
 }

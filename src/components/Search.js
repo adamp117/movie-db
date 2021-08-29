@@ -1,11 +1,14 @@
 
-import { API_KEY } from '../globals/globals.js'
+import { API_KEY } from '../globals/globalVariables.js'
 import MovieCard from './MovieCard.js';
 import { useState } from 'react';
 
 function Search() {
     const [query, setQuery] = useState("");
     const [result, setResults] = useState([]);
+
+
+
     const onChange = (e) => {
         e.preventDefault();
         setQuery(e.target.value);
@@ -44,8 +47,9 @@ function Search() {
                         </ul>
                     )}
                 </div>
+
             </div>
-        </div>
+        </div >
     )
 }
 

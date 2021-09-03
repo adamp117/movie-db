@@ -12,6 +12,25 @@ function PageHome({ sort }) {
 
     const [movieData, setMovieData] = useState(null);
 
+    // Add some state to track if there is a search query:
+    const [hasQuery, setHasQuery] = useState(false);
+
+    // Pass this into Search. It will call the function like so
+    // in its onChange handler:
+    //   props.onQuery(e.target.value)
+    //
+    // So the function param query == e.target.value.
+    // Now you can decide to set a local variable that tracks
+    // whether or not a search query is present, and use this
+    // to hide/show the Home component (see render below)
+    const onQuery = (query) => {
+        if (!!query) {
+            setHasQuery(true);
+        } else {
+            setHasQuery(false);
+        }
+    }
+
     useEffect(() => {
 
         const fetchMovies = async () => {
@@ -39,9 +58,13 @@ function PageHome({ sort }) {
     return (
 
         <section className="home-page">
-            <Search />
+            <Search
+                onQuery={onQuery}
+            />
             <NavSort />
-            {movieData !== null && <Movies movieData={movieData} />}
+            {movieData !== null && !hasQuery && (
+                <Movies movieData={movieData} />
+            )}
         </section>
     )
 }

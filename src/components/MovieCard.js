@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import noPoster from '../images/no-movie-poster.jpg';
 import useGlobal from '../store/globalAppState';
 import FavButton from './FavButton';
-const imageFolderPath = process.env.PUBLIC_URL + '/assets/images/';
+import heartImage from '../images/heart.png';
 
 
 function MovieCard({ movieObj, isFav }) {
@@ -38,7 +38,16 @@ function MovieCard({ movieObj, isFav }) {
                 <div className="heart-container">
                     {isFav &&
                         <div className="heart">
-                            <img src={`${imageFolderPath}heart.png`} alt="Heart" />
+                            <img
+                                src={heartImage}
+                                alt="Heart"
+                                style={{
+                                    height: '20px',
+                                    width: '20px',
+                                    marginLeft: '20px',
+                                    position: 'relative',
+                                }}
+                            />
                         </div>}
                     <div className="btn-favourite">
                         {isFav ?

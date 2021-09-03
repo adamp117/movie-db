@@ -19,14 +19,19 @@ function PageFavs() {
         <main>
             <section>
                 <h2>Favourite Movies</h2>
-                {globalState.favs.length < 1 ? <p>No favourite movies. Return to the <Link to="/">home</Link> page to add some favourite movies.</p> :
-                    <div className="movies-container">
-                        {globalState.favs.map((oneMovie, i) => {
-                            return <Movies key={i}
-                                oneMovie={oneMovie}
-                                isFav={true} />
-                        })}
-                    </div>}
+                {
+                    globalState.favs && globalState.favs.length < 1
+                        ?   <p>
+                                No favourite movies. Return to the
+                                <Link to="/">home</Link> page to add some favourite movies.
+                            </p>
+                        : (
+                            <Movies
+                                movieData={globalState.favs}
+                                isFav={true}
+                            />
+                        )
+                }
             </section>
         </main>
     );

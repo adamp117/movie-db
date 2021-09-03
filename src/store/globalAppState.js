@@ -45,6 +45,6 @@ const initialState = {
     favs: getFavs()
 }
 
-const useGlobal = globalHook(React, initialState, actions);
+const useGlobal = globalHook(initialState, actions);
 
 export default useGlobal;

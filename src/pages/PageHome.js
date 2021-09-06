@@ -4,7 +4,7 @@ import Movies from '../components/Movies';
 import { API_TOKEN } from '../globals/globalVariables';
 import Search from '../components/Search';
 import useGlobal from '../store/globalAppState';
-import isFav from '../utilities/isFav';
+// import isFav from '../utilities/isFav';
 
 function PageHome({ sort }) {
     const globalStateAndglobalActions = useGlobal();

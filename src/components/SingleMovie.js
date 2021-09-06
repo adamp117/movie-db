@@ -1,8 +1,18 @@
 import noPoster from '../images/no-movie-poster.jpg';
 import FavButton from './FavButton';
+import useGlobal from '../store/globalAppState';
 
-function SingleMovie({ movieObj }) {
+function SingleMovie({ movieObj, isFav }) {
+    const globalStateAndglobalActions = useGlobal();
+    const globalActions = globalStateAndglobalActions[1];
 
+    function handleFavClick(addToFav, obj) {
+        if (addToFav === true) {
+            globalActions.addFav(obj);
+        } else {
+            globalActions.removeFav(obj.id);
+        }
+    }
     return (
         <div className="single-movie">
             <div className="single-movie-backdrop"
@@ -20,9 +30,15 @@ function SingleMovie({ movieObj }) {
                     <h2>{movieObj.title}</h2>
                     <p>{movieObj.overview}</p>
                 </div>
-                <div className="fav-button">
-                    <FavButton className="fav-btn" movieObj={movieObj} />
+                <div className="btn-favourite">
+                    {isFav ?
+                        <FavButton movieObj={movieObj} remove={true} handleFavClick={handleFavClick} /> :
+                        <FavButton movieObj={movieObj} handleFavClick={handleFavClick} />
+                    }
                 </div>
+                {/* <div className="fav-button">
+                    <FavButton movieObj={movieObj} />
+                </div> */}
             </div>
         </div>
     )

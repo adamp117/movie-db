@@ -13,8 +13,8 @@ function FavButton({ movieObj, remove, handleFavClick }) {
     return (
         <>
             {remove === false ?
-                <button onClick={handleAddFav}>Add To Favs</button> :
-                <button onClick={handleRemoveFav}>Remove From Favs</button>}
+                <button className="btn" onClick={handleAddFav}>Add To Favs</button> :
+                <button className="btn" onClick={handleRemoveFav}>Remove From Favs</button>}
         </>
     );
 

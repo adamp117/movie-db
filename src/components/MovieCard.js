@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import noPoster from '../images/no-movie-poster.jpg';
 import useGlobal from '../store/globalAppState';
 import FavButton from './FavButton';
-import heartImage from '../images/heart.png';
+// import heartImage from '../images/heart.png';
 
 
 function MovieCard({ movieObj, isFav }) {
@@ -27,28 +27,33 @@ function MovieCard({ movieObj, isFav }) {
 
             </div>
             <div className="movie-overlay">
+                <div className="movie-box">
+                    <div className="rating">{movieObj.vote_average * 10}%</div>
+                    <p>{movieObj.release_date}</p>
+                </div>
                 <div className="movie-info">
-                    <h3>{movieObj.title}</h3>
+                    <h3>{movieObj.title.length > 19 ? `${movieObj.title.substring(0, 19)}...` : movieObj.title}</h3>
 
-                    <p>{movieObj.overview}</p>
+                    <p>{movieObj.overview.length > 200 ? `${movieObj.overview.substring(0, 200)}...` : movieObj.overview}</p>
                     <Link className="more-info" to={`/movie/${movieObj.id}`}>More Info</Link>
 
 
                 </div>
-                <div className="heart-container">
-                    {isFav &&
-                        <div className="heart">
-                            <img
-                                src={heartImage}
-                                alt="Heart"
-                                style={{
-                                    height: '20px',
-                                    width: '20px',
-                                    marginLeft: '20px',
-                                    position: 'relative',
-                                }}
-                            />
-                        </div>}
+                <div className="movie-box">
+                    {/* <div className="heart-container">
+                        {isFav &&
+                            <div className="heart">
+                                <img
+                                    src={heartImage}
+                                    alt="Heart"
+                                    style={{
+                                        height: '20px',
+                                        width: '20px',
+                                        marginLeft: '20px',
+                                        position: 'relative',
+                                    }}
+                                />
+                            </div>} */}
                     <div className="btn-favourite">
                         {isFav ?
                             <FavButton movieObj={movieObj} remove={true} handleFavClick={handleFavClick} /> :
@@ -58,6 +63,7 @@ function MovieCard({ movieObj, isFav }) {
                 </div>
             </div>
         </div>
+
 
 
         // {/* <div className="movie">

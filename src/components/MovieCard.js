@@ -27,20 +27,24 @@ function MovieCard({ movieObj, isFav }) {
 
             </div>
             <div className="movie-overlay">
-                <div className="movie-box">
-                    <div className="rating">{movieObj.vote_average * 10}%</div>
-                    <p>{movieObj.release_date}</p>
-                </div>
+
                 <div className="movie-info">
-                    <h3>{movieObj.title.length > 19 ? `${movieObj.title.substring(0, 19)}...` : movieObj.title}</h3>
-
-                    <p>{movieObj.overview.length > 200 ? `${movieObj.overview.substring(0, 200)}...` : movieObj.overview}</p>
+                    <div className="movie-box">
+                        <h3>{movieObj.vote_average * 10}%</h3>
+                        <h3>{movieObj.release_date}</h3>
+                    </div>
+                    <h2>{movieObj.title.length > 20 ? `${movieObj.title.substring(0, 20)}...` : movieObj.title}</h2>
+                    <p>{movieObj.overview.length > 150 ? `${movieObj.overview.substring(0, 150)}...` : movieObj.overview}</p>
                     <Link className="more-info" to={`/movie/${movieObj.id}`}>More Info</Link>
-
-
+                    <div className="btn-favourite">
+                        {isFav ?
+                            <FavButton movieObj={movieObj} remove={true} handleFavClick={handleFavClick} /> :
+                            <FavButton movieObj={movieObj} handleFavClick={handleFavClick} />
+                        }
+                    </div>
                 </div>
-                <div className="movie-box">
-                    {/* <div className="heart-container">
+
+                {/* <div className="heart-container">
                         {isFav &&
                             <div className="heart">
                                 <img
@@ -54,13 +58,9 @@ function MovieCard({ movieObj, isFav }) {
                                     }}
                                 />
                             </div>} */}
-                    <div className="btn-favourite">
-                        {isFav ?
-                            <FavButton movieObj={movieObj} remove={true} handleFavClick={handleFavClick} /> :
-                            <FavButton movieObj={movieObj} handleFavClick={handleFavClick} />
-                        }
-                    </div>
-                </div>
+
+
+
             </div>
         </div>
 

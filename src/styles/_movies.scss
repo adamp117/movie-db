@@ -4,9 +4,9 @@
 .results {
     position: relative;
     padding: em(15);
-    // display: grid;
-    //     grid-template-columns: 1fr 1fr;
-    //     gap: em(14);
+    display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: em(14);
 
     @include mq($tablet){
         display: grid;

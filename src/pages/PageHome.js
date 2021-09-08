@@ -1,12 +1,35 @@
 import { useEffect, useState } from 'react';
 import NavSort from '../components/NavSort';
 import Movies from '../components/Movies';
-import { API_TOKEN } from '../globals/globals';
+import { API_TOKEN } from '../globals/globalVariables';
 import Search from '../components/Search';
+import useGlobal from '../store/globalAppState';
+// import isFav from '../utilities/isFav';
 
 function PageHome({ sort }) {
+    const globalStateAndglobalActions = useGlobal();
+    const globalState = globalStateAndglobalActions[0];
 
     const [movieData, setMovieData] = useState(null);
+
+    // Add some state to track if there is a search query:
+    const [hasQuery, setHasQuery] = useState(false);
+
+    // Pass this into Search. It will call the function like so
+    // in its onChange handler:
+    //   props.onQuery(e.target.value)
+    //
+    // So the function param query == e.target.value.
+    // Now you can decide to set a local variable that tracks
+    // whether or not a search query is present, and use this
+    // to hide/show the Home component (see render below)
+    const onQuery = (query) => {
+        if (!!query) {
+            setHasQuery(true);
+        } else {
+            setHasQuery(false);
+        }
+    }
 
     useEffect(() => {
 
@@ -35,9 +58,13 @@ function PageHome({ sort }) {
     return (
 
         <section className="home-page">
-            <Search />
+            <Search
+                onQuery={onQuery}
+            />
             <NavSort />
-            {movieData !== null && <Movies movieData={movieData} />}
+            {movieData !== null && !hasQuery && (
+                <Movies movieData={movieData} />
+            )}
         </section>
     )
 }

@@ -1,15 +1,112 @@
 // Movie Card
+.movie-card {
+    position: relative;
+    
+    .movie-poster {
+        position: relative;
+       
+        img {
+            display: block;
+            width: 100%;
+            height: auto;   
+        }
 
-.movie-poster {
+        @include mq($tablet){
+            margin-bottom: 0;
+        } 
+    }
 
-    img {
+    .movie-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(254, 254, 254, 0.8);
+        overflow: hidden;
         width: 100%;
-        // border-radius: 10px; rounded??? 
-    }
+        height: 100%;
+        transform: scale(0);
+        transition: .3s ease;
 
-    @include mq($tablet){
-        margin-bottom: 0;
-        // padding: em(10);
-    }
+        .movie-info{
+            h2 {
+                color: $altTextColor;
+                padding: .5rem .5rem 0 .5rem; 
+                font-size: .7rem;
+            }
+            p{
+            color: $altTextColor;
+            font-size: .5rem;
+            line-height: .6rem;
+            padding: .2rem $tiny-space;
+           }
+           .movie-box {
+            padding: $tiniest-space;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
+            h3{
+            color: $altTextColor;
+            font-size: .6rem;
+            }
+           
+            }
+        }    
+           .more-info{
+            color: $altTextColor;
+            font-size: .5rem;
+            text-transform: uppercase;
+            padding: .2rem $tiny-space; 
+            text-decoration: none;
+            line-height: .5rem;
+            &:hover{
+                color: $featureColor;
+            
+            }
+            } 
+            .btn-favourite{
+            
+                .btn{
+                margin: 0 .5rem;
+                box-shadow:inset 0px 1px 0px 0px #f5978e;
+                background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+                background-color:$featureColor;
+                // border-radius:6px;
+                border:1px solid $featureColor;
+                display:inline-block;
+                cursor:pointer;
+                color:#ffffff;
+                font-family:'Lato', sans-serif;
+                text-transform: uppercase;
+                font-size:.5rem;
+                font-weight:bold;
+                padding:3px 10px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #810e05;
+                    
+                    &:hover {
+                        background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+                        background-color:#c62d1f;
+                    }
+                    &:active {
+                        position:relative;
+                        top:1px;
+                    }
+                    
+                } 
+          
+         } 
+    
+        }
+    
+
+      
+    &:hover{
+        .movie-overlay {
+            transform: scale(1);
+            overflow: hidden;
+        
+        } 
+    }
 }

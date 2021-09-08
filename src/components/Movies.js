@@ -1,11 +1,22 @@
 import MovieCard from './MovieCard';
 
-function Movies({ movieData }) {
+
+// import { Link } from 'react-router-dom';
+
+function Movies({ movieData, isFav }) {
     return (
         <div className="movies-container">
-           {movieData.map((oneMovie, i) => <MovieCard key={i} movieObj={oneMovie} />)}
+            {movieData.map((oneMovie, i) => (
+                <MovieCard
+                    key={i}
+                    movieObj={oneMovie}
+                    isFav={isFav}
+                />
+            ))}
         </div>
+
     )
+
 }
 
 export default Movies;

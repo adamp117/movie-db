@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import noPoster from '../images/no-movie-poster.jpg';
 import useGlobal from '../store/globalAppState';
 import FavButton from './FavButton';
+
 // import heartImage from '../images/heart.png';
 
 
@@ -34,7 +35,7 @@ function MovieCard({ movieObj, isFav }) {
                         <h3>{movieObj.release_date}</h3>
                     </div>
                     <h2>{movieObj.title.length > 20 ? `${movieObj.title.substring(0, 20)}...` : movieObj.title}</h2>
-                    <p>{movieObj.overview.length > 150 ? `${movieObj.overview.substring(0, 150)}...` : movieObj.overview}</p>
+                    <p>{movieObj.overview.length > 120 ? `${movieObj.overview.substring(0, 120)}...` : movieObj.overview}</p>
                     <Link className="more-info" to={`/movie/${movieObj.id}`}>More Info</Link>
                     <div className="btn-favourite">
                         {isFav ?

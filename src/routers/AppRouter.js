@@ -24,8 +24,9 @@ function AppRouter() {
           </Switch>
         </main>
         <Footer />
-      </div>
-    </Router>
+      </div >
+
+    </Router >
   );
 }
 

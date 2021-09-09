@@ -1,23 +1,25 @@
+import tmd_logo from '../images/tmd_logo.svg';
+
 function PageAbout() {
     return (
         <main>
             <section className="about-page">
-
-
-
-                <h2>Quick Flicks</h2>
                 <div className="about-info">
-                    <h3>Welcome to Quick Flicks</h3>
-                    <p>This is your site too.
+                    <h2>Welcome to Quick Flicks</h2>
+                    <p>This is a movie database created by Robert Watt, Adam Paquette, and Sara Evans during the May 2021 intake of BCIT's Front End Web Development Program.
+                        We invite you to browse for your favorite film and add it to your favourites.
                     </p>
-                    <p>All data comes from <em>TMDB movie website.</em>
+                    <h3>The Movie Database</h3>
+                    <p>All movie data comes from <em>The Movie Database (TMDB) website</em>
                     </p>
-                    {/* <p><img className="md-logo" src={mdlogo} alt="md logo" /></p> */}
-                    <p>Browse for your favorite film, add it to your favourites
-                    </p>
+                    <img className="tmd-logo" src={tmd_logo} alt="tmd logo" />
+
                 </div>
             </section>
         </main>
+
+
+
     );
 }
 

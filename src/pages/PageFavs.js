@@ -17,14 +17,13 @@ function PageFavs() {
 
     return (
         <main>
-            <section>
+            <section className="favourite-info">
                 <h2>Favourite Movies</h2>
                 {
                     globalState.favs && globalState.favs.length < 1
-                        ?   <p>
-                                No favourite movies. Return to the
-                                <Link to="/">home</Link> page to add some favourite movies.
-                            </p>
+                        ? <p>
+                            You have no favourite movies. You can search for your <Link to="/">favourite</Link> movie and add it to this page.
+                        </p>
                         : (
                             <Movies
                                 movieData={globalState.favs}

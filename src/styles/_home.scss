@@ -24,4 +24,15 @@
     li{
     list-style: none;
     }
+    @include mq($tablet){
+      input{
+        width: 60%;
+      }
+      @include mq($desktop){
+        input{
+            width: 60%;
+          }
+    }
+
+    }
     }

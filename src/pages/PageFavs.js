@@ -21,7 +21,7 @@ function PageFavs() {
                 <h2 className="fav-title">Favourite Movies</h2>
                 {
                     globalState.favs && globalState.favs.length < 1
-                        ? <p>
+                        ? <p className="fav-text">
                             You have no favourite movies. You can search for your <Link to="/">favourite</Link> movie and add it to this page.
                         </p>
                         : (

@@ -1,9 +1,14 @@
 .favourite-info{
-    h2, h3{
-            text-align: center;
+    .fav-title {
+         text-align: center;
+        }
+    h3{
+        color: $altTextColor;
+        font-size: .6rem;
         }
     p{
-        padding: 0 4rem;
-        text-align: center;
+       
+        padding: 0 3rem;
+        
     }
 }   

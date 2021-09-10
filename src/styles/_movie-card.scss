@@ -39,6 +39,7 @@
             font-size: .5rem;
             line-height: .6rem;
             padding: .2rem $tiny-space;
+            text-align: left;
            }
            .movie-box {
             padding: $tiniest-space;
@@ -70,7 +71,7 @@
                 .btn{
                 margin: 0 .5rem;
                 // box-shadow:inset 0px 1px 0px 0px #f5978e;
-                background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+                background:linear-gradient(to bottom, #f24537 5%, #ED2024 100%);
                 background-color:$featureColor;
                 // border-radius:6px;
                 border:1px solid $featureColor;
@@ -86,7 +87,7 @@
                 // text-shadow:0px 1px 0px #810e05;
                     
                     &:hover {
-                        background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+                        background:linear-gradient(to bottom, #ED2024 5%, #f24537 100%);
                         background-color:#c62d1f;
                     }
                     &:active {

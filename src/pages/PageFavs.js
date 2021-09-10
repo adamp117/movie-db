@@ -18,7 +18,7 @@ function PageFavs() {
     return (
         <main>
             <section className="favourite-info">
-                <h2>Favourite Movies</h2>
+                <h2 className="fav-title">Favourite Movies</h2>
                 {
                     globalState.favs && globalState.favs.length < 1
                         ? <p>

@@ -6,8 +6,8 @@
     // flex-direction: row;
     align-items: center;
    display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   grid-gap: 2rem;
+   grid-template-columns: 1fr 4fr 1fr;
+   grid-gap: 2em;
 
     p {
         text-transform: uppercase;
@@ -17,6 +17,13 @@
         font-size: .4rem;
     }
     .logo{
-        width: 100%;
+        width: 70%;
     }
+    @include mq($tablet){
+        p {
+            
+            font-size: .7rem;
+        }
+       
+    } 
 }

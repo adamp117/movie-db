@@ -1,6 +1,6 @@
 // Footer
 footer {
-    position: relative;
+    
    
 .footer-info {
     padding: 2rem 1rem 1rem 1rem;
@@ -9,6 +9,7 @@ footer {
    grid-template-columns: 1fr 4fr 1fr;
    grid-gap: 2em;
    margin-top: 6rem;
+   position: relative;
 //    position:absolute;
 // left:0;
 // bottom:0;
@@ -22,9 +23,15 @@ footer {
         text-align: center;
         font-size: .4rem;
     }
+    
+        
     .logo{
         width: 70%;
+        position:relative; 
+        left:10px; 
+        top:2px;
     }
+
     @include mq($tablet){
         p {
             
@@ -32,6 +39,7 @@ footer {
         }
         .logo{
             width: 40%;
+            left:30px; 
         }
        
     } 
@@ -43,6 +51,7 @@ footer {
         }
         .logo{
             width: 30%;
+            left:60px; 
         }
     }
 }

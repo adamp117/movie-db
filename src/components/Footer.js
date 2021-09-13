@@ -8,7 +8,9 @@ function Footer() {
 
                 <p>&copy; 2021 quick flicks inc</p>
                 <p><strong>Created By: </strong> Robert Watt | Adam Paquette | Sara Evans</p>
-                <Link to="/"><img src={logo} className="logo" alt="Quick Flicks Logo" /> </Link>
+                <div className="logo-block">
+                    <Link to="/"><img src={logo} className="logo" alt="Quick Flicks Logo" /> </Link>
+                </div>
             </div>
         </footer>
     )

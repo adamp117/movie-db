@@ -1,5 +1,5 @@
 // Page Favs
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import useGlobal from '../store/globalAppState';
 import Movies from '../components/Movies';
@@ -8,12 +8,23 @@ import { appTitle } from '../globals/globalVariables';
 
 function PageFavs() {
 
-    const globalStateAndActions = useGlobal();
-    const globalState = globalStateAndActions[0];
+    // const globalStateAndActions = useGlobal();
+    // const globalState = globalStateAndActions[0];
+
+    const [globalState, globalActions] = useGlobal();
+    const [ready, setReady] = useState(false);
+
+    // useEffect(() => {
+    //     document.title = `${appTitle} - Favs`;
+    // }, []);
 
     useEffect(() => {
-        document.title = `${appTitle} - Favs`;
-    }, []);
+
+        globalActions.setFavs();
+
+        setReady(true);
+
+    }, [globalActions]);
 
     return (
         <main>

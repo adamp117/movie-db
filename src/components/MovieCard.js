@@ -40,7 +40,7 @@ function MovieCard({ movieObj, isFav }) {
                     <div className="btn-favourite">
                         {isFav ?
                             <FavButton movieObj={movieObj} remove={true} handleFavClick={handleFavClick} /> :
-                            <FavButton movieObj={movieObj} handleFavClick={handleFavClick} />
+                            <FavButton movieObj={movieObj} handleFavClick={handleFavClick} /> 
                         }
                     </div>
                 </div>

@@ -1,8 +1,12 @@
     .search-feature {
         text-align: center;
         padding: 1rem;
-        padding-left: 27rem;
-        padding-right: 27rem;
+
+        @media (min-width: 1920px){
+    
+          padding-left: 27rem;
+          padding-right: 27rem;
+        }
         
     input {
         display: inline-block;

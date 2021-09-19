@@ -4,7 +4,7 @@ function NavSort() {
     return (
         <nav className="nav-sort">
             <ul>
-                <li>
+                {/* <li>
                     <NavLink to="/sort/popular">Popular</NavLink>
                 </li>
                 <li>
@@ -15,7 +15,7 @@ function NavSort() {
                 </li>
                 <li>
                     <NavLink to="/sort/upcoming">Upcoming</NavLink>
-                </li>
+                </li> */}
             </ul>
         </nav>
     )

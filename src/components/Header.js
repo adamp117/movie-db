@@ -5,15 +5,6 @@ import Nav from './Nav';
 import logo from '../images/quick-flicks_logo_2.png';
 
 
-// function headerLogo() {
-//     return (
-//         <header>
-//             <Link to="/"><img src={logo} className="logo" alt="Quick Flicks Logo" /> </Link>
-//             <Nav />
-//         </header >
-//     )
-// }
-// added
 const Header = () => {
 
     const [navOpen, setNavOpen] = useState(false);

@@ -1,0 +1,20 @@
+.favourite-info{
+    margin-bottom: 3rem;
+    padding: 2rem;
+    .fav-title {
+         text-align: center;
+        }
+    h3{
+        color: $altTextColor;
+        font-size: .6rem;
+        }
+    .fav-text{
+            //    font-size: .7rem;
+               text-align: center;
+            }
+    p{
+    //    font-size: .7rem;
+        padding: 0 3rem;
+        
+    }
+}   

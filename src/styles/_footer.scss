@@ -1,10 +1,58 @@
 // Footer
 footer {
-    padding: em(10);
+    
+   
+.footer-info {
+    padding: 2rem 1rem 1rem 1rem;
+    align-items: center;
+   display: grid;
+   grid-template-columns: 1fr 4fr 1fr;
+   grid-gap: 2em;
+   margin-top: 6rem;
+   position: relative;
+//    position:absolute;
+// left:0;
+// bottom:0;
+// right:0;
+
+
     p {
         text-transform: uppercase;
         margin: 0;
         color: black;
         text-align: center;
+        font-size: .4rem;
     }
+    
+        
+    .logo{
+        width: 70%;
+        position:relative; 
+        left:10px; 
+        top:2px;
+    }
+
+    @include mq($tablet){
+        p {
+            
+            font-size: .5rem;
+        }
+        .logo{
+            width: 40%;
+            left:30px; 
+        }
+       
+    } 
+    @include mq($desktop){
+       
+        p {
+            
+            font-size: .6rem;
+        }
+        .logo{
+            width: 30%;
+            left:60px; 
+        }
+    }
+}
 }

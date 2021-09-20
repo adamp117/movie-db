@@ -1,7 +1,13 @@
-.search-feature{
-    text-align: center;
-    padding: 1rem;
- 
+    .search-feature {
+        text-align: center;
+        padding: 1rem;
+
+        @media (min-width: 1920px){
+    
+          padding-left: 27rem;
+          padding-right: 27rem;
+        }
+        
     input {
         display: inline-block;
         margin: 0 auto;   
@@ -21,5 +27,16 @@
     }
     li{
     list-style: none;
+    }
+    @include mq($tablet){
+      input{
+        width: 60%;
+      }
+      @include mq($desktop){
+        input{
+            width: 60%;
+          }
+    }
+
     }
     }

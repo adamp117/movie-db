@@ -5,7 +5,7 @@ nav {
         margin: 0;
         padding: 0;
         list-style: none;
-        display: flex;
+        // display: flex;
     }
     li {
         flex: 1;
@@ -22,12 +22,12 @@ nav {
         text-align: center;
         line-height: em(40);
         text-transform: uppercase;
-        // &:hover,
-        // &:active,
-        // &:focus {
+        &:hover,
+        &:active,
+        &:focus {
         //     // background-color: rgba(white, 0.05);
         
-        // }
+        }
         &.active {
             color: red;
         }
@@ -45,8 +45,23 @@ nav {
     }
 }
 
-// .nav-sort {
-//     // li {
-//     //     // background-color: $highlightColor;
-//     // }
-// }
+.nav-sort {
+    a {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        line-height: 1rem;
+        text-transform: uppercase;
+        font-size: .7rem;
+        &:hover,
+        &:active,
+        &:focus {
+        color: red;    
+        }
+    }  
+    @include mq($tablet){
+        a{
+           font-size: 1rem;
+        }
+   }  
+}

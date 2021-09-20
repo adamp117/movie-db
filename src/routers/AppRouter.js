@@ -26,7 +26,6 @@ function AppRouter() {
         </main>
         <Footer />
       </div >
-
     </Router >
   );
 }
